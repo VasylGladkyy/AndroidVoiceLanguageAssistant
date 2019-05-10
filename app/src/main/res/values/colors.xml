@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2398CF</color>
+    <color name="colorPrimaryDark">#2398CF</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="txtColor">#FFFFFF</color>
+    <color name="startSpStartBgColor">#3F51B5</color>
+    <color name="startSpEndBgColor">#00BCD4</color>
+
+    <color name="gOneStartColor">#ffd6d3</color>
+    <color name="gTwoEndColor">#38ACE7</color>
+    <color name="gTwoStartColor">#FFFFFF</color>
+    <color name="gTreeEndColor">#0081E6</color>
+    <color name="gTreeStartColor">#673AB7</color>
+
+    <color name="bShapeStrokeColor">#0e94b2</color>
+
+    <color name="homeActivityTint">#a2a2a2</color>
+    <color name="noInternetConection">#4B0457</color>
+
+    <color name="chatBoxColor">#DADADA</color>
+    <color name="chatTranslateBoxColor">#2196F3</color>
+    <color name="textBoxShapeColor">#343794</color>
+</resources>

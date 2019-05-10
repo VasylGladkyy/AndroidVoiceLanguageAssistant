@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">AndroidVoiceLanguageAssistant</string>
+
+    <string name="reason_app_name">Android voice language assistant</string>
+    <string name="developer_tag">Created by Vasyl Gladkyy</string>
+
+    <string name="conversation_string">NEW CONVERSATION</string>
+    <string name="translate_string">TEXT TRANSLATE</string>
+    <string name="about_string">ABOUT APP</string>
+
+    <string name="exit_string">Press Back again to Exit.</string>
+
+    <string name="no_internet_connection">No Internet Connection Available</string>
+    <string name="new_translate">Translate</string>
+    <string name="hint_text">Tap to enter text</string>
+    <string name="process_tts">Switching Language</string>
+    <string name="plz_speak">Speak Now</string>
+    <string name="language_pack_missing">This language speech pack needs to be installed</string>
+    <string name="language_not_supported">This language speech is currently not supported</string>
+    <string name="select_need_text">Select need text</string>
+
+    <string name="API_KEY">trnsl.1.1.20190310T144118Z.1e95720dfe06c2ff.2273c2d12b07559341f83028294ac1388a72e846</string>
+
+    <string name="speak_now">Speak Now</string>
+    <string name="select_matching_text">Select Matching Text</string>
+
+    <string name="about_app_text">
+        Додаток який надає можливість перекладати як окремі слова так і цілі тексти.
+        \nПідтримує більше 90 мов.
+        \nПрисутні можливості голосового і текстового вводу
+        \nНавибір надані два інтерфейса:
+        \n-Для бесіди;
+        \n-Для текстового перекладу.
+        \nВажливо:
+        \nДля коректної роботи потрібен доступ до мобільної мережі інтернет.
+    </string>
+
+</resources>
