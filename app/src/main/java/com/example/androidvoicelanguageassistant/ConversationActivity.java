@@ -5,8 +5,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.database.DataSetObserver;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +28,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidvoicelanguageassistant.service.InternetConnection;
+import com.example.androidvoicelanguageassistant.service.InternetConnectionImplement;
 import com.example.androidvoicelanguageassistant.utils.QueryUtils;
 
 import java.util.ArrayList;
@@ -60,6 +60,7 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
     private EditText mEditTextChatKeyboardInput;
     private boolean mLeftSide;
     private Dialog process_tts;
+    private InternetConnection internetConnection;
     HashMap<String, String> map = new HashMap<>();
     volatile boolean activityRunning;
 
@@ -84,20 +85,16 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
         process_tts.setContentView(R.layout.dialog_processing_tts);
         process_tts.setTitle(getString(R.string.process_tts));
         TextView title = (TextView) process_tts.findViewById(android.R.id.title);
-        // title.setSingleLine(false);
         mTextToSpeech = new TextToSpeech(this,this);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         noInternetConectionLayout=(LinearLayout)findViewById(R.id.empty_view_not_connected);
         actionBar.setDisplayHomeAsUpEnabled(true);
         mLinearLayoutKeyboardPopup.setVisibility(View.GONE);
+        internetConnection=new InternetConnectionImplement(this);
 
-        if (!isOnline()) {
-            //mEmptyTextView.setVisibility(View.VISIBLE);
+        if (!internetConnection.isConnected()) {
             noInternetConectionLayout.setVisibility(View.VISIBLE);
-            //noInternetConectionLayout.setVisibility(View.INVISIBLE);
-            //mLinearLayoutKeyboardPopup.setVisibility(View.INVISIBLE);
         } else {
-           // mEmptyTextView.setVisibility(View.GONE);
             noInternetConectionLayout.setVisibility(View.GONE);
             mLinearLayoutKeyboardPopup.setVisibility(View.GONE);
             mListView.setAdapter(chatArrayAdapter);
@@ -230,16 +227,7 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
             });
         }
     }
-    public  boolean isOnline()
-    {   try {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected();
-    } catch (Exception e) {
-        Log.e(LOG_TAG, e.getMessage());
-    }
-        return false;
-    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

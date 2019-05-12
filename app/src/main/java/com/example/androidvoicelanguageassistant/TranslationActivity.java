@@ -2,17 +2,14 @@ package com.example.androidvoicelanguageassistant;
 
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +24,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidvoicelanguageassistant.service.InternetConnection;
+import com.example.androidvoicelanguageassistant.service.InternetConnectionImplement;
 import com.example.androidvoicelanguageassistant.utils.QueryUtils;
 
 import java.util.ArrayList;
@@ -54,6 +53,7 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
     private EditText mTextInput;
     private TextView mTextTranslated;
     private Dialog process_tts;
+    private InternetConnection internetConnection;
     HashMap<String, String> map = new HashMap<>();
     volatile boolean activityRunning;
 
@@ -78,11 +78,10 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
         process_tts.setContentView(R.layout.dialog_processing_tts);
         process_tts.setTitle(getString(R.string.process_tts));
         TextView title = (TextView) process_tts.findViewById(android.R.id.title);
-        // title.setSingleLine(false);
         mTextToSpeech = new TextToSpeech(this, this);
+        internetConnection=new InternetConnectionImplement(this);
 
-
-        if (!isOnline()) {
+        if (!internetConnection.isConnected()) {
             noInternetConectionLayout.setVisibility(View.VISIBLE);
             //mTextInput.setEnabled(false);
             mTextInput.setFocusable(false);
@@ -162,17 +161,6 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
                 }
             });
         }
-    }
-
-    public  boolean isOnline()
-    {   try {
-        ConnectivityManager connectivityManager = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected();
-    } catch (Exception e) {
-        Log.e(LOG_TAG, e.getMessage());
-    }
-        return false;
     }
 
     @Override
