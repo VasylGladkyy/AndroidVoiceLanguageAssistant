@@ -1,4 +1,4 @@
-package com.example.androidvoicelanguageassistant;
+package com.example.androidvoicelanguageassistant.service;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,11 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.androidvoicelanguageassistant.R;
 import com.example.androidvoicelanguageassistant.domain.ChatMessage;
 
 import java.util.ArrayList;
 
-class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
+public class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
     private ArrayList<ChatMessage> mListChatMessages = new ArrayList<>();
 
     @Override

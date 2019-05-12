@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.androidvoicelanguageassistant.domain.ChatMessage;
+import com.example.androidvoicelanguageassistant.service.ChatArrayAdapter;
 import com.example.androidvoicelanguageassistant.service.InternetConnection;
 import com.example.androidvoicelanguageassistant.service.InternetConnectionImplement;
 import com.example.androidvoicelanguageassistant.utils.QueryUtils;
