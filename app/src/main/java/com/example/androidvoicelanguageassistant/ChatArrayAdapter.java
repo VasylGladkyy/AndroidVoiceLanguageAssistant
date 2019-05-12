@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.androidvoicelanguageassistant.domain.ChatMessage;
+
 import java.util.ArrayList;
 
 class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
@@ -41,21 +43,21 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
         View row = convertView;
         LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (chatMessage != null) {
-            if (chatMessage.getmTranslate()) {
-                if (chatMessage.getmLeft()) {
+            if (chatMessage.isMTranslate()) {
+                if (chatMessage.isMLeft()) {
                     row = inflater.inflate(R.layout.chat_translate_left, parent, false);
                 } else {
                     row = inflater.inflate(R.layout.chat_translate_right, parent, false);
                 }
             } else {
-                if (chatMessage.getmLeft()) {
+                if (chatMessage.isMLeft()) {
                     row = inflater.inflate(R.layout.chat_left, parent, false);
                 } else {
                     row = inflater.inflate(R.layout.chat_right, parent, false);
                 }
             }
             TextView TextMessage = (TextView) row.findViewById(R.id.message);
-            TextMessage.setText(chatMessage.getmMessage());
+            TextMessage.setText(chatMessage.getMMessage());
         }
         return row;
     }

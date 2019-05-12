@@ -28,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidvoicelanguageassistant.domain.ChatMessage;
 import com.example.androidvoicelanguageassistant.service.InternetConnection;
 import com.example.androidvoicelanguageassistant.service.InternetConnectionImplement;
 import com.example.androidvoicelanguageassistant.utils.QueryUtils;
@@ -76,7 +77,6 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
         ImageView mImageKeyboardTo = (ImageView) findViewById(R.id.image_keyboard_to);
         ImageView mImageMicFrom = (ImageView) findViewById(R.id.image_mic_from);
         ImageView mImageMicTo = (ImageView) findViewById(R.id.image_mic_to);
-        //TextView mEmptyTextView = (TextView) findViewById(R.id.empty_view_not_connected);
         mListView = (ListView) findViewById(R.id.list_chat_view);
         chatArrayAdapter = new ChatArrayAdapter(getApplicationContext(), R.layout.chat_left);
         mLinearLayoutKeyboardPopup = (LinearLayout) findViewById(R.id.popup_keyboard);
@@ -221,7 +221,7 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     ChatMessage chatMessage = chatArrayAdapter.getItem(position);
                     if (chatMessage != null) {
-                        speakOut(chatMessage.getmMessage(),chatMessage.getmLanguageCode());
+                        speakOut(chatMessage.getMMessage(),chatMessage.getMLanguageCode());
                     }
                 }
             });
