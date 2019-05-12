@@ -1,4 +1,4 @@
-package com.example.androidvoicelanguageassistant;
+package com.example.androidvoicelanguageassistant.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -18,7 +18,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static com.example.androidvoicelanguageassistant.GlobalVars.LANGUAGE_CODES;
+import static com.example.androidvoicelanguageassistant.utils.GlobalVars.LANGUAGE_CODES;
 
 public class QueryUtils {
 

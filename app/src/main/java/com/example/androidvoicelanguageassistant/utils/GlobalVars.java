@@ -1,4 +1,4 @@
-package com.example.androidvoicelanguageassistant;
+package com.example.androidvoicelanguageassistant.utils;
 
 import java.util.ArrayList;
 

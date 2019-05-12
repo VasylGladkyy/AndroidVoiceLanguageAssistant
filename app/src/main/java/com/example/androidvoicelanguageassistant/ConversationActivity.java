@@ -30,14 +30,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.androidvoicelanguageassistant.utils.QueryUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-import static com.example.androidvoicelanguageassistant.GlobalVars.BASE_REQ_URL;
-import static com.example.androidvoicelanguageassistant.GlobalVars.DEFAULT_FROM_LANG_POS;
-import static com.example.androidvoicelanguageassistant.GlobalVars.DEFAULT_FROM_LANG_TO;
-import static com.example.androidvoicelanguageassistant.GlobalVars.LANGUAGE_CODES;
+import static com.example.androidvoicelanguageassistant.utils.GlobalVars.BASE_REQ_URL;
+import static com.example.androidvoicelanguageassistant.utils.GlobalVars.DEFAULT_FROM_LANG_POS;
+import static com.example.androidvoicelanguageassistant.utils.GlobalVars.DEFAULT_FROM_LANG_TO;
+import static com.example.androidvoicelanguageassistant.utils.GlobalVars.LANGUAGE_CODES;
 
 public class ConversationActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
 
