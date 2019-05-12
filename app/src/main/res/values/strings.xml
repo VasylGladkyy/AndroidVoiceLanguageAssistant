@@ -25,14 +25,15 @@
     <string name="select_matching_text">Select Matching Text</string>
 
     <string name="about_app_text">
-        Додаток який надає можливість перекладати як окремі слова так і цілі тексти.
-        \nПідтримує більше 90 мов.
-        \nПрисутні можливості голосового і текстового вводу
-        \nНавибір надані два інтерфейса:
-        \n-Для бесіди;
-        \n-Для текстового перекладу.
-        \nВажливо:
-        \nДля коректної роботи потрібен доступ до мобільної мережі інтернет.
+        An application that allows you to translate both individual words and whole texts.
+        \nSupports more than 90 languages.
+        \nPresent voice and text input capabilities
+        \nThere are two modes to choose from:
+        \n-For a conversation.
+        \n-For text translation.
+        \nImportantly:
+        \nFor correct work you need access to the mobile Internet.
+        \nTranslation is carried out thanks to Yandex API.
     </string>
 
 </resources>
