@@ -5,15 +5,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
+import lombok.AllArgsConstructor;
+
 import static com.example.androidvoicelanguageassistant.utils.QueryUtils.LOG_TAG;
 
+@AllArgsConstructor
 public class InternetConnectionImplement implements InternetConnection {
 
     private Context context;
-
-    public InternetConnectionImplement(Context context) {
-        this.context=context;
-    }
 
     @Override
     public boolean isConnected() {

@@ -18,14 +18,14 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import lombok.NoArgsConstructor;
+
 import static com.example.androidvoicelanguageassistant.utils.GlobalVars.LANGUAGE_CODES;
 
+@NoArgsConstructor
 public class QueryUtils {
 
     public static final String LOG_TAG = QueryUtils.class.getName();
-
-    private QueryUtils() {
-    }
 
     private static URL createUrl(String stringUrl) {
         URL url = null;
@@ -109,7 +109,6 @@ public class QueryUtils {
             JSONObject baseJsonResponse = new JSONObject(stringJSON);
             JSONObject baseJsonResponseLangs = baseJsonResponse.optJSONObject("langs");
             Iterator<String> iter = baseJsonResponseLangs.keys();
-            //LANGU.clear();
             LANGUAGE_CODES.clear();
             while (iter.hasNext()) {
                 String key = iter.next();
@@ -138,7 +137,6 @@ public class QueryUtils {
         return extractFromJsonTranslation(jsonResponse);
     }
 
-    //  PUBLIC METHOD TO FETCH LANGUAGES
     public static ArrayList<String> fetchLanguages(String requestUrl) {
         URL url = createUrl(requestUrl);
         String jsonResponse = null;
