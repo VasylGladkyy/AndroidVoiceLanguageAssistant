@@ -10,31 +10,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/empty_view_not_connected">
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            app:srcCompat="@drawable/miss_internet"/>
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:textSize="24sp"
-            android:text="@string/no_internet_connection"
-            android:textColor="@color/noInternetConection"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingBottom="50dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.12"
         android:orientation="horizontal">

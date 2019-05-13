@@ -18,7 +18,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,7 +42,6 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
     public static final String LOG_TAG = TranslationActivity.class.getName();
     private static final int REQ_CODE_SPEECH_INPUT = 1;
 
-    private LinearLayout noInternetConectionLayout;
     private TextToSpeech mTextToSpeech;
     private Spinner mSpinnerLanguageFrom;
     private Spinner mSpinnerLanguageTo;
@@ -63,7 +61,6 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
         setContentView(R.layout.translation_activity);
 
         activityRunning=true;
-        noInternetConectionLayout=(LinearLayout)findViewById(R.id.empty_view_not_connected);
         mSpinnerLanguageFrom = (Spinner) findViewById(R.id.spinner_language_from);
         mSpinnerLanguageTo = (Spinner) findViewById(R.id.spinner_language_to);
         Button mButtonTranslate = (Button) findViewById(R.id.button_translate);
@@ -81,14 +78,8 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
         mTextToSpeech = new TextToSpeech(this, this);
         internetConnection=new InternetConnectionImplement(this);
 
-        if (!internetConnection.isConnected()) {
-            noInternetConectionLayout.setVisibility(View.VISIBLE);
-            //mTextInput.setEnabled(false);
-            mTextInput.setFocusable(false);
-           // mTextInput.setFocusableInTouchMode(false);
-        } else {
-            noInternetConectionLayout.setVisibility(View.GONE);
-
+        if (!internetConnection.isConnected())setContentView(R.layout.no_internet_conection);
+        else {
             new GetLanguages().execute();
             mImageListen.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -288,6 +279,7 @@ public class TranslationActivity extends AppCompatActivity implements TextToSpee
             Log.e("String Url ---->",uriBuilder.toString());
             return QueryUtils.fetchLanguages(uriBuilder.toString());
         }
+
         @Override
         protected void onPostExecute(ArrayList<String> result) {
             if (activityRunning) {

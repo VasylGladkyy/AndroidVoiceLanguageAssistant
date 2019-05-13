@@ -49,7 +49,6 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
     private static final int REQ_CODE_SPEECH_INPUT_FROM = 1;
     private static final int REQ_CODE_SPEECH_INPUT_TO = 2;
 
-    private LinearLayout noInternetConectionLayout;
     private TextToSpeech mTextToSpeech;
     private Spinner mSpinnerLanguageFrom;
     private Spinner mSpinnerLanguageTo;
@@ -88,15 +87,12 @@ public class ConversationActivity extends AppCompatActivity implements TextToSpe
         TextView title = (TextView) process_tts.findViewById(android.R.id.title);
         mTextToSpeech = new TextToSpeech(this,this);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        noInternetConectionLayout=(LinearLayout)findViewById(R.id.empty_view_not_connected);
         actionBar.setDisplayHomeAsUpEnabled(true);
         mLinearLayoutKeyboardPopup.setVisibility(View.GONE);
         internetConnection=new InternetConnectionImplement(this);
 
-        if (!internetConnection.isConnected()) {
-            noInternetConectionLayout.setVisibility(View.VISIBLE);
-        } else {
-            noInternetConectionLayout.setVisibility(View.GONE);
+        if (!internetConnection.isConnected())setContentView(R.layout.no_internet_conection);
+         else {
             mLinearLayoutKeyboardPopup.setVisibility(View.GONE);
             mListView.setAdapter(chatArrayAdapter);
             new GetLanguages().execute();
