@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradient_list"
+    android:orientation="horizontal"
+    android:gravity="center"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/translate_world"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="75dp"
+        android:layout_weight="0">
+
+    <Button
+        android:id="@+id/start_new_conversation"
+        android:layout_width="@dimen/start_buttons_width"
+        android:layout_height="@dimen/start_buttons_height"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="@string/conversation_string"
+        android:textColor="@android:color/white"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/start_new_translation"
+        android:layout_width="@dimen/start_buttons_width"
+        android:layout_height="@dimen/start_buttons_height"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="@string/translate_string"
+        android:textColor="@android:color/white"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="@dimen/start_buttons_width"
+        android:layout_height="@dimen/start_buttons_height"
+        android:layout_gravity="right"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="@string/about_string"
+        android:textColor="@android:color/white"
+        android:textSize="17sp" />
+    </LinearLayout>
+
+</LinearLayout>
