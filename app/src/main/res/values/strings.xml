@@ -19,11 +19,11 @@
     <string name="language_not_supported">This language speech is currently not supported</string>
     <string name="select_need_text">Select need text</string>
 
-    <string name="API_KEY">trnsl.1.1.20190310T144118Z.1e95720dfe06c2ff.2273c2d12b07559341f83028294ac1388a72e846</string>
+    <string name="API_KEY" translatable="false">trnsl.1.1.20190310T144118Z.1e95720dfe06c2ff.2273c2d12b07559341f83028294ac1388a72e846</string>
 
     <string name="speak_now">Speak Now</string>
     <string name="select_matching_text">Select Matching Text</string>
-
+    <string name="Clear_titile">Clear</string>
     <string name="about_app_text">
         An application that allows you to translate both individual words and whole texts.
         \nSupports more than 90 languages.

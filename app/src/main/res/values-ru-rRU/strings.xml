@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ГолосовойЯзыковойAndroid-помощник</string>
+    <string name="Clear_titile">Очистить</string>
+    <string name="about_string">О приложении</string>
+    <string name="conversation_string">Новый Диалог</string>
+    <string name="developer_tag">Разработал Гладкий Василь</string>
+    <string name="exit_string">Нажмите еще раз для выхода.</string>
+    <string name="hint_text">Нажмите, чтобы ввести текст</string>
+    <string name="language_not_supported">Этот язык речь пока не поддерживается</string>
+    <string name="language_pack_missing">Этот языковой пакет не установлен!</string>
+    <string name="new_translate">Перевести</string>
+    <string name="no_internet_connection">Соединение с интернетом отсутствует</string>
+    <string name="plz_speak">Говорите</string>
+    <string name="process_tts">Переключение языка</string>
+    <string name="reason_app_name">Голосовой Языковой Android-помощник</string>
+    <string name="select_matching_text">Выберите соответствующий текст</string>
+    <string name="select_need_text">Выберите нужный текст</string>
+    <string name="speak_now">Говорите</string>
+    <string name="translate_string">Переклад тексту</string>
+    <string name="about_app_text">
+        Приложение, позволяющее переводить как отдельные слова, так и целые тексты.
+        \nПоддерживает более 90 языков.
+        \nДоступные возможности голосового и текстового ввода
+        \nМожно выбрать один из двух режимов:
+        \n-Для беседы.
+        \n-Для перевода текста.
+        \nВажно:
+        \nДля корректной работы требуется доступ к мобильному Интернету.
+        \nПеревод осуществляется благодаря Yandex API.
+    </string>
+</resources>
